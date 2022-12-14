@@ -1,0 +1,6 @@
+///
+
+-	If you for some godforsaken reason decide to do a retro option,
+	remember that you can change particle type sprites on the fly.
+	Maybe have each entity check if the flag is set and change their
+	sprite index accordingly.

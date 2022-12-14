@@ -1,0 +1,12 @@
+///
+
+Elevator in Egg Corridor Room:
+	In the room with all the computers that show the hatched eggs. Give the elevator
+	a device that, when interacted with, moves the elevator to it's next position.
+	
+Enemy Gaudis:
+	Give 'em a bit of a tint. Just to distinguish between them and the friendly gaudis.
+	
+Grasstown Secret:
+	Above the save area near the power room, there's two lines of blocks above the door
+	that looks like it could lead to something.

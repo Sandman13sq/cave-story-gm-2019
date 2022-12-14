@@ -1,0 +1,103 @@
+From CaveEditor
+
+Sound Effects (SOU)
+0000 <nothing>
+0001  [blip]
+0002 Message typing
+0003 Bonk
+0004 Weapon switch
+0005  [?]
+0006  [critter hop?]
+0007  [nothing?]
+0008  [nothing?]
+0009  [nothing?]
+0010  [nothing?]
+0011 Door
+0012  [*plsh* - map tile change?]
+0013  [nothing?]
+0014 Get weapon energy
+0015  [click]
+0016 Take damage
+0017 Die
+0018  [menu?]
+0019  [nothing?]
+0020 Health/ammo refill
+0021  [bubble]
+0022 Click (chest, life capsule, unlock door)
+0023  [thud]
+0024  [tap - walking?]
+0025  [enemy killed?]
+0026  [loud thud - balrog?]
+0027 Level Up
+0028  [thump]
+0029 Teleport
+0030  [jump]
+0031 Invulnerable "ting"
+0032  [shot - polar star?]
+0033  [shot - fireball]
+0034  [shot - fireball bounce?]
+0035  [explosion (missiles?]
+0036  [nothing?]
+0037  [click]
+0038  [get item?]
+0039  [*bvng*]
+0040  [water?]
+0041  [water?]
+0042  [beep]
+0043 Computer beep (activate terminals, etc.)
+0044 Blast (blow up door to Shelt)
+0045 Weapon energy bounce
+0046  [*ftt*]
+0047  [?]
+0048  [shot - bubble pop?]
+0049  [shot - spur lv 1]
+0050  [enemy squeak]
+0051  [enemy take damage]
+0052  [large enemy take damage (roar)]
+0053  [enemy squeak-bblblbl]
+0054  [object shot (thud)]
+0055  [enemy squeak]
+0056  [splash]
+0057  [little damage sound]
+0058  [*chlk*]
+0059  [nothing?]
+0060  [spur charge - lower]
+0061  [spur charge - higher]
+0062 Shot - Spur lv 2
+0063 Shot - Spur lv 3
+0064 Shot - Spur max
+0065 Spur fully charged
+0066  [nothing?]
+0067  [nothing?]
+0068  [nothing?]
+0069  [nothing?]
+0070  [Sue hitting you while you're unconscious in Jail1]
+0071  [explosion]
+0072  [explosion]
+0073  [nothing?]
+0074  [nothing?]
+0075  [nothing?]
+0076  [nothing?]
+0077  [nothing?]
+0078  [nothing?]
+0079  [nothing?]
+0080  [nothing?]
+0081  [nothing?]
+0082  [nothing?]
+0083  [nothing?]
+0084  [nothing?]
+0085  [nothing?]
+0086  [nothing?]
+0087  [nothing?]
+0088  [nothing?]
+0089  [nothing?]
+0090  [nothing?]
+0091  [nothing?]
+0092  [nothing?]
+0093  [nothing?]
+0094  [nothing?]
+0095  [nothing?]
+0096  [nothing?]
+0097  [nothing?]
+0098  [nothing?]
+0099  [nothing?]

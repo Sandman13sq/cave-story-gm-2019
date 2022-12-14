@@ -1,0 +1,5 @@
+Energy Crystal Gravitation,
+	If a setting is on, all nearby dropped energy crystals will fly towards the Player_Stat.
+	
+Radar,
+	Shows the map and player position on the top left of the screen

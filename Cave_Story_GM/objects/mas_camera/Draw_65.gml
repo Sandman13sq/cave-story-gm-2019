@@ -1,0 +1,3 @@
+/// @desc 
+
+resetCamera = true;

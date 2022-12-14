@@ -1,0 +1,12 @@
+///
+
+- Data is spread out throughout the entire file.
+	- All Entities' flags are the first chunk of the file.
+	- Each Piece of data is 0x24 (36) Bytes.
+	- Each Piece of data is separayed by 0x5A4 (1444) Bytes 
+		- Bytes 0x0 - 0x1 is the Entity Flags
+		- Bytes 0x2 - 0x3 is the Y cell position of the Entity
+		- Bytes 0x4 - 0x5 is the Entity ID
+		- Bytes 0x6 - 0x7 is the Event Number
+		- Bytes 0x8 - 0x9 is the Entity Type
+		- Bytes 0xA - 0xB is the Entity Flags

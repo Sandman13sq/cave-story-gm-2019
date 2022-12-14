@@ -1,0 +1,1 @@
+/// @desc Hurt Sound Buffer

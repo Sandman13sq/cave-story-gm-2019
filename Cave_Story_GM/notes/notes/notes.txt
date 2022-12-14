@@ -1,0 +1,11 @@
+Hold "1" while restarting to load the animmaker
+Use Ctrl + O to open the animation.anim file
+I used this to write a database to load animations from during the game
+Do Ctrl + Shift + E to Copy the database code to clipboard and paste into the loadAnimationGroup() script
+Be sure to use Ctrl + S to save changes
+
+While this version of animmaker works, it is not the most updated version.
+It functions ands does what I need, but is prone to crashing (so save frequently!)
+The version in my other main project is more cleaner in terms of code and has more features.
+
+You could always fix it up yourself, though...

@@ -1,0 +1,34 @@
+Grenade Launcher:
+	Combining the Fireball and Missle launcher, the Grenade Launcher is born.
+	The Grenade launcher shoots grenades with the physics of the Fireball with
+	the added quality of exploding.
+	Lv1: Small explosion after second bounce. Bounces off enemies and walls.
+	Lv2: Explosion after third bounce. Bounces off walls but explodes on contact with enemies.
+	Lv3: Big explosion after third bounce. Same bounce properties as Lv2
+	
+Sling:
+	A rifle that causes the player to hover and aim a powerful beam shot.
+	The last held direction will pre-position the crosshair.
+	There's a cooldown to the slowdown that firing the weapon gives.
+	Lv1: Shoots a single beam shot at the crosshair. Can only be used on ground.
+	Lv2: Shoots a continuous beam at the crosshair. Pierces through enemies.
+	Lv3: Same as above, but bigger.
+	
+Shark:
+	An upgraded missile launcher that shoots enemy-tracking missiles.
+	Lv1: Lightly tracks enemies. Cannot turn more than 90 degrees from its initial launch
+	Lv2: Tracks enemies. Cannot turn more than 90 degrees from its initial launch
+	Lv3: Tracks enemies. Full rotation motion.
+	
+King's Blade:
+	Lv4: Blade swings will throw phantom blades. Projectiles that meet with the blade swing will be
+		deflected.
+	Lv5: Same as above, but a ghost of Arthur/King will hover around and shoot at enemies.
+	
+Polar Star:
+	Lv4: Has Spur's properties with a separate charge bar that appears above the player's head.
+		(Doesn't use the exp meter as a charge bar. May replace original spur)
+	
+Fireball:
+	Lv4: Shoots a lasting fireball on first press. Holding the button down shoots a 
+	stream of flames. 

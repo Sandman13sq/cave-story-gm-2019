@@ -1,0 +1,10 @@
+
+
+
+ANIMATION_GROUP (Map) ->
+	Groups (Maps) ->
+		Sequences (Arrays) ->
+			Frames (Arrays) ->
+				Sprite Index
+				Image_Index
+				Duration

@@ -1,0 +1,16 @@
+///
+
+0x14B6D Starting Flag
+
+0x14B74 Starting Direction
+
+0x14BCF Starting HP
+0x14BD8 Starting Max HP
+
+0x1D590 Y Position
+0x1D592 X Position
+
+0x1D599 First Map
+
+0x1D594 - 0x1D595 First Event
+

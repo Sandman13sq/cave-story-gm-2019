@@ -1,0 +1,53 @@
+///
+
+==(General)==
+- There are 5 fade scripts at the beginning of each .tsc file
+	- Scripts used: #0090 - #0094
+		- Each one sets the current music and fades in a different direction
+		
+- Following that are various scripts starting from #0099 up to (I assume) #0999
+  for stage stuffs.
+	- To help discern which events belong to which part of the stage...
+	  the third digit of the event number represents big differences in event relation
+
+
+==StageSelect.tsc==
+- Scripts used: #1000 - #1005
+	- No unlocked areas #1000
+	- Egg Corridor	#1001
+	- Grasstown		#1002
+	- Sand Zone		#1003
+	- Labyrinth		#1004
+	- Plantation	#1005
+
+==ArmsItem.tsc==
+- Scripts used: #0000, #1000 - #1299, #5000 - #6099, #7000 - #7040
+- Holds scripts for...
+	- General waiting		#0000
+	- Weapon descriptions	#1000 - #1013
+	- Dog Names				#1100 - #1104
+	- Dog descriptions		#1200 - #1204
+	- Item Names			#5000 - #5039
+	- Item Descriptions		#6000 - #6039
+	- Map Display			#7002
+	- Booster 0.8 Equip		#7018
+	- Booster 2.0 Equip		#7023
+	- Whimsical Star Equip	#7038
+
+==Head.tsc==
+- Scripts used: #0000 - #0049
+- Holds scripts for...
+	- General waiting	#0000
+	- Empty Chests		#0001
+	- Saving			#0016
+	- Health Refill		#0017
+	- Full Refill		#0018
+	- Bed Resting		#0019
+	- Missle Launcher	#0030
+	- Add Missles		#0031
+	- Add Super Missles #0032
+	- Game Over			#0040
+	- Drowned			#0041
+	- Outside Fall		#0042
+	- Load Save File	#0048
+	- Quit to Title		#0049

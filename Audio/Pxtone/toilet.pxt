@@ -1,0 +1,124 @@
+use  :0
+size :766
+main_model   :4
+main_freq    :1175.46
+main_top     :34
+main_offset  :99
+pitch_model  :2
+pitch_freq   :0.79
+pitch_top    :4
+pitch_offset :108
+volume_model :0
+volume_freq  :0.53
+volume_top   :16
+volume_offset:235
+initialY:44
+ax      :0
+ay      :28
+bx      :65
+by      :26
+cx      :248
+cy      :55
+
+use  :1
+size :26184
+main_model   :0
+main_freq    :377.84
+main_top     :34
+main_offset  :88
+pitch_model  :5
+pitch_freq   :1.58
+pitch_top    :14
+pitch_offset :101
+volume_model :3
+volume_freq  :1.58
+volume_top   :56
+volume_offset:43
+initialY:36
+ax      :33
+ay      :4
+bx      :94
+by      :25
+cx      :119
+cy      :52
+
+use  :0
+size :18699
+main_model   :3
+main_freq    :1182.32
+main_top     :28
+main_offset  :135
+pitch_model  :2
+pitch_freq   :1.32
+pitch_top    :23
+pitch_offset :209
+volume_model :1
+volume_freq  :0.26
+volume_top   :5
+volume_offset:13
+initialY:48
+ax      :39
+ay      :37
+bx      :46
+by      :41
+cx      :50
+cy      :16
+
+use  :0
+size :1945
+main_model   :3
+main_freq    :452.51
+main_top     :44
+main_offset  :54
+pitch_model  :0
+pitch_freq   :0.00
+pitch_top    :0
+pitch_offset :74
+volume_model :4
+volume_freq  :0.00
+volume_top   :46
+volume_offset:89
+initialY:44
+ax      :0
+ay      :10
+bx      :104
+by      :1
+cx      :240
+cy      :40
+
+{0,766,4,1175.46,34,99,2,0.79,4,108,0,0.53,16,235,44,0,28,65,26,248,55},
+{1,26184,0,377.84,34,88,5,1.58,14,101,3,1.58,56,43,36,33,4,94,25,119,52},
+{0,18699,3,1182.32,28,135,2,1.32,23,209,1,0.26,5,13,48,39,37,46,41,50,16},
+{0,1945,3,452.51,44,54,0,0.00,0,74,4,0.00,46,89,44,0,10,104,1,240,40},
+
+-> {6,2.64,46,241,5,0.26,20,46,6,1.06,7,215,0,0.00,0,214},
+-> {255,0,255,0,255,0,255,0},
+
+pitch2_model :2
+pitch2_freq  :0.79
+pitch2_top   :4
+pitch2_offset:108
+dx      :255
+dy      :0
+
+pitch2_model :5
+pitch2_freq  :1.58
+pitch2_top   :14
+pitch2_offset:101
+dx      :255
+dy      :0
+
+pitch2_model :2
+pitch2_freq  :1.32
+pitch2_top   :23
+pitch2_offset:209
+dx      :255
+dy      :0
+
+pitch2_model :0
+pitch2_freq  :0.00
+pitch2_top   :0
+pitch2_offset:74
+dx      :255
+dy      :0
+

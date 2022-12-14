@@ -1,0 +1,18 @@
+NPC FLAGS
+==============
+0x0001 - Solid
+0x0002 - No effect about Tile 44
+0x0004 - Invulnerable (Blink Sound)
+0x0008 - Ignore solid
+0x0010 - Bouncing at top
+0x0020 - Shootable
+0x0040 - Special Solid
+0x0080 - Rear and top attack power 0
+0x0100 - Costum
+0x0200 - Boss Flag
+0x0400 - ???
+0x0800 - Is visible if FlagID is set
+0x1000 - Costum
+0x2000 - Call on Event
+0x4000 - Is invisible if FlagID is set
+0x8000 - Show Damage Numbers

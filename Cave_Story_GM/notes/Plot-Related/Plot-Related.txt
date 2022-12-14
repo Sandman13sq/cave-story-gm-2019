@@ -1,0 +1,67 @@
+Alternate Booster event:
+	Instead of Booster being dropped down in that room before the Balrog labyrinth fight,
+	he's in the frog doctor's room with Curly. You can choose to give the Cure-All to either
+	Curly or Booster. Curly will say Booster needs it more than she does. 
+	
+New Villian:
+	A virus that was inintentionally installed onto Quote, that began rewriting and
+	adding to Quote's memories. It takes up many forms in the various times it is
+	seen in the game. It feeds off of the energy from Quote's strongest defeated enemies.
+	Until a better name comes by (unless this name grows enough on me); They'll be named
+	Malwa. (Uirusu)
+	
+Puu Replacement:
+	Instead of fighting Puu Black, you fight Malwa. She enlarges the room before the 
+	fight starts, demonstrating her ability to manipulate the game in some way.
+	
+Memory Cores:
+	Malwa's goal is to absorb Quote's dead friends and enemies and take them for herself,
+	wiping Quote's memory so that she can take control of his body. She absorbs the following
+	key characters as the game goes on:
+		Toroko - Right after leaving the room where Rabid Toroko is fought.
+		King - Same as above.
+		Doctor - After Quote leaves the final boss room.
+		Jenka - Right before/as Quote enters the Bloodstained Sanctuary.
+		Curly - Crushed along with Quote right after the Ballos fight.
+	The Memory Cores are associated with:
+		Toroko - Finding the silver locket after losing it in the labyrinth.
+		King - Stolen from Malwa during her mandatory boss fight.
+		Jenka - Life Pot. Must not be used.
+		Curly - Iron Bond given after restoring Curly's memory. (Maybe also the underwear)
+	Others are found in the extra area if all of the above are found beforehand:
+		Kazuma - Getting the Explosive back after Balfrog X fight
+		Remaining Mimigas - Getting Arthur's Key back after Black Toroko & Cohorts fight
+		Curly (Part 1) - Getting Curly's Air Tank after fighting Core X
+		Booster - Getting Booster v2.0 after fighting The Sisters X
+		Curly (Part 2) - Getting Curly's Underwear after fighting CROSS-CLONE
+		Momorin & Itoh - Getting the Mimiga Mask back after Black Ogre fight
+		Sue - Getting Sue's letter after Sue? and Misery? fight
+		Doctor's Minions - Getting Whimsical Star after Pooh Black and Despair fight
+		Curly (Part 3) - Getting Curly's Air Tank after Lost Curly fight
+		Jenka & Ballos - Getting the Dream Cannon after Memory Head fight
+		Quote (and everything else) - Defeating Shin Malwa/Shin Uirusu
+	The less key items that Quote has before meeting Malwa on the Balcony?,
+	the stronger Malwa is in the extra part of the game. The Iron Bond is necessary, 
+	as it marks the moment Quote learns his name. 
+	If Quote manages to defeat Malwa on the Balcony? she'll give him a choice to let her go
+	or kill her. 
+		If Quote chooses to let her go, she stands up and strikes Quote straight through
+		the heart, and absorbs his body, forcing the game to run through a command-like
+		interface that ends with "MEMORY CORRUPTED" repeated over and over again.
+		If Quote chooses to kill her, she warps behind Quote as soon ah he fires and 
+		stabs him in the back. She mocks Quote for thinking he had a chance and 
+		absorbs his body.
+	Mayhaps this needs to be trimmed down a bit. We'll see.
+	
+Why Uirusu is here:
+	After the events of Cave Story when Quote, Curly, and Balrog have found a home to live in,
+	Curly's been acting a bit strange. Every now and then she'll be lost in thought and look
+	upset. She always puts up a smile whenever anyone asks and says she's okay. Since she won't
+	tell her what's bothering her, Quote downloads a memory searcher program to see if recounting
+	his past adventures would lead him to an answer. This program, unbeknownst to Quote, 
+	was a virus. When Quote went to sleep that day, the virus began searching through his 
+	memories to delete his data and take over his body. The name of the program was MALWA
+	(Memory After Long While Accessor) or (Memory Archive Latent Working Accessor), the being
+	living inside the program is Uirusu.
+		If I'm crazy enough, I'll do a MALWA:RE 
+		(Memory Archive Latent Working Accessor: Remastered Edition)

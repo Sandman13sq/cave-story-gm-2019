@@ -1,0 +1,11 @@
+{
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "animmaker_createFrame",
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Animmaker",
+    "path": "folders/Scripts/Debug/Animmaker.yy",
+  },
+}

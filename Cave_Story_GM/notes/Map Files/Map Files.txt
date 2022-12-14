@@ -1,0 +1,64 @@
+/// 
+
+==Pxe Files==
+- Houses Data for Entities
+	- First four bytes represent the file type ("PXE.")
+	- Next 2 Bytes are the number of entities
+	- Data of first entity starts at 0x8
+	- From the starting point of an entity...
+		- Bytes 0x0 - 0x1 is the X cell position of the Entity
+		- Bytes 0x2 - 0x3 is the Y cell position of the Entity
+		- Bytes 0x4 - 0x5 is the Entity ID
+		- Bytes 0x6 - 0x7 is the Event Number
+		- Bytes 0x8 - 0x9 is the Entity Type
+		- Bytes 0xA - 0xB is the Entity Flags
+		
+		- Each part of data is 2 bytes, 
+		  meaning they can hold integer values up to 0xFF (65535)
+		- Entity data is 12 bytes long
+------------------------------------- 
+
+==Pxm Files==
+- Houses Data for Stage Tiles
+	- First four bytes represent the file type ("PXM.")
+	- Next Four bytes are dimensions
+		- Bytes 0x4 - 0x5 are the Stage width
+		- Bytes 0x6 - 0x7 are the Stage height
+	- Tile Data starts at 0x8
+		- Each byte represents a tile
+			- Meaning tile images cannot exceed 256 tiles
+		- Data goes to end of file
+		
+------------------------------------- 
+
+==Tsc Files==
+THE FOLLOWING IS WRONG!!
+- Houses Data for scripts
+	- It's a text file, only every character is bumped up by 0x4C (76) bytes
+		- Subtract 0x4C (76) from every byte in the file and you get something readable.
+		
+-------------------------------------
+
+==Pxa Files==
+- Data for Tile Collision Mapping
+	- Bytes match the position of the tile in the tile image file.
+		- i.e. Byte 7 will be the collision for Tile 7
+	- Data goes to end of file
+		- File size is always 0xFF (256) bytes
+		
+-------------------------------------
+
+==Map Properties==
+- Map Properites exist in Doukutsu.exe starting at byte 0x937B0
+	- From the starting point of a stage...
+		- Bytes 0x00 - 0x1F is the name of the tileset image (without "Prt")
+		- Bytes 0x20 - 0x3F is the name of the map
+		- Bytes 0x40 - 0x43 is the type of scrolling for the background
+		- Bytes 0x44 - 0x63 is the name of backround image
+		- Bytes 0x64 - 0x83 is the name of the first NPC image file
+		- Bytes 0x84 - 0xA3 is the name of the second NPC image file
+		- Byte	0xA4 is the Boss Fight ID
+		- Bytes 0xA5 - 0xC4 is the map caption
+		- Bytes 0xC5 - 0xC7 are unknown/unused
+	- Stage Properties is 0xC8 (200) bytes long
+		

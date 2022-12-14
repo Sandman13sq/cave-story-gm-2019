@@ -1,0 +1,3 @@
+Double Tap:
+	An item shaped like the Arms Barrier that either completely removes the limit 
+	for maximum on-screen shots or doubles it. Maybe an easy-mode only thing.

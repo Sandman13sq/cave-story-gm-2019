@@ -1,0 +1,1 @@
+setEntityState(Weapon.machineGun);

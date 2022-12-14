@@ -1,0 +1,1 @@
+// set_background(bk_gray, Background_Mode.parallax);

@@ -1,0 +1,13 @@
+///
+
+Exp Overflow,
+	If additional energy gained overflows a weapon's max energy,
+	the energy will carry over to the next level.
+	
+Exp Gravitation,
+	Energy will gravitate towards the player if in range.
+	
+Spur Meter,
+	The spur's charge is displayed as a meter around the player.
+
+chnages

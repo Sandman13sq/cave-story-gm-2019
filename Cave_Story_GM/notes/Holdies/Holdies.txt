@@ -1,0 +1,219 @@
+/// @desc
+/// @arg index
+
+enum animIndex
+{
+	// Quote
+	quote_idle = 1,
+		quote_idle_up,
+	quote_run,
+		quote_run_up,
+		quote_run_down,
+	
+	quote_rise,
+		quote_rise_up,
+		quote_rise_down,
+	quote_air,
+		quote_air_up,
+		quote_air_down,
+	quote_fall,
+		quote_fall_up,
+		quote_fall_down,
+	
+	quote_look,
+		quote_look_end,
+	
+	// Sue
+	sue_idle,
+	
+	// Cemetery Enemies
+	bat_fly,
+	bat_ko,
+}
+
+// Anim Speed = Time in Frames until next animation image
+/*
+	1/60 = 1 Second
+	1 = 1 Frame
+	
+*/
+
+if animCurrent != argument[0]
+{
+	anim_clear();
+	animCurrent = argument[0];
+	var _flag = 0, _sub = 0;
+
+	switch(animCurrent)
+	{
+		case(animIndex.quote_idle):
+			animSpeed = 10;
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 0, 0);
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 1, 0);
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 2, 0);
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 3, 0);
+			
+			anim_addSprite_weapon(0, 5, 6);
+			anim_addSprite_weapon(0, 5, 5);
+			anim_addSprite_weapon(0, 5, 5);
+			anim_addSprite_weapon(0, 5, 6);
+			break;
+			
+		case(animIndex.quote_idle_up):
+			animSpeed = 10;
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 4, 0);
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 5, 0);
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 6, 0);
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 7, 0);
+			
+			anim_addSprite_weapon(1, 4, -15);
+			anim_addSprite_weapon(1, 4, -16);
+			anim_addSprite_weapon(1, 4, -16);
+			anim_addSprite_weapon(1, 4, -15);
+			break;
+		//	------------------------------------------------------------
+		case(animIndex.quote_run):
+			animSpeed = 8;
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 8, 0);
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 9, 0);
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 8, 0);
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 10, 0);
+			
+			anim_addSprite_weapon(0, 5, 6);
+			anim_addSprite_weapon(0, 5, 5);
+			anim_addSprite_weapon(0, 5, 6);
+			anim_addSprite_weapon(0, 5, 5);
+			break;
+			
+		case(animIndex.quote_run_up):
+			animSpeed = 8;
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 12, 0);
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 13, 0);
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 12, 0);
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 14, 0);
+			
+			anim_addSprite_weapon(1, 4, -15);
+			anim_addSprite_weapon(1, 4, -16);
+			anim_addSprite_weapon(1, 4, -15);
+			anim_addSprite_weapon(1, 4, -16);
+			break;
+			
+		case(animIndex.quote_run_down):
+			animSpeed = 3;
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 12, 0);
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 13, 0);
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 12, 0);
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 14, 0);
+			
+			anim_addSprite_weapon(0, -10, 6);
+			anim_addSprite_weapon(0, -10, 5);
+			anim_addSprite_weapon(0, -10, 6);
+			anim_addSprite_weapon(0, -10, 5);
+			break;
+		//	------------------------------------------------------------
+		case(animIndex.quote_rise):
+			animSpeed = 5;
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 16, 0);
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 17, 0);
+			
+			anim_addSprite_weapon(0, 5, 6);
+			anim_addSprite_weapon(0, 5, 6);
+			break;
+			
+		case(animIndex.quote_rise_up):
+			animSpeed = 5;
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 20, 0);
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 21, 0);
+			
+			anim_addSprite_weapon(1, 4, -16);
+			anim_addSprite_weapon(1, 4, -16);
+			break;
+			
+		case(animIndex.quote_rise_down):
+			animSpeed = 5;
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 24, 0);
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 25, 0);
+			
+			anim_addSprite_weapon(2, 4, 16);
+			anim_addSprite_weapon(2, 4, 16);
+			break;
+		//	------------------------------------------------------------
+		case(animIndex.quote_air):
+			animSpeed = 0;
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 28, 0);
+			
+			anim_addSprite_weapon(0, 6, 6);
+			break;
+			
+		case(animIndex.quote_air_up):
+			animSpeed = 0;
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 29, 0);
+			
+			anim_addSprite_weapon(1, 5, -16);
+			break;
+			
+		case(animIndex.quote_air_down):
+			animSpeed = 0;
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 30, 0);
+			break;
+		//	------------------------------------------------------------
+		case(animIndex.quote_fall):
+			animSpeed = 5;
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 18, 0);
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 19, 0);
+			
+			anim_addSprite_weapon(0, 6, 6);
+			anim_addSprite_weapon(0, 6, 6);
+			break;
+			
+		case(animIndex.quote_fall_up):
+			animSpeed = 5;
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 22, 0);
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 23, 0);
+			
+			anim_addSprite_weapon(1, 5, -16);
+			anim_addSprite_weapon(1, 5, -16);
+			break;
+			
+		case(animIndex.quote_fall_down):
+			animSpeed = 5;
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 26, 0);
+			anim_addSprite(playerSpriteSet[spriteSet_Index], 27, 0);
+			break;
+		//	------------------------------------------------------------
+		case(animIndex.quote_look):
+			animSpeed = 3;
+			anim_addSprite(spr_quote_turn, 0, 0);
+			anim_addSprite(spr_quote_turn, 1, 0);
+			anim_addSprite(spr_quote_turn, 2, 0);
+			anim_addSprite(spr_quote_turn, 3, 1 << anim.flag_noLoop);
+			break;
+			
+		case(animIndex.quote_look_end):
+			animSpeed = 0;
+			anim_addSprite(spr_quote_turn, 3, 1 << anim.flag_noLoop);
+			break;
+			
+		//	------------------------------------
+		case(animIndex.bat_fly):
+			anim_addSprite(spr_bat, 0, 0);
+			anim_addSprite(spr_bat, 1, 0);
+			anim_addSprite(spr_bat, 2, 0);
+			anim_addSprite(spr_bat, 3, 0);
+			anim_addSprite(spr_bat, 4, 0);
+			anim_addSprite(spr_bat, 5, 0);
+			anim_addSprite(spr_bat, 2, 0);
+			anim_addSprite(spr_bat, 1, 0);
+			animSpeed = 1;
+			break;
+// =================================================================
+		case(animIndex.sue_idle):
+			animSpeed = 10;
+			anim_addSprite(spr_sue, 0, 0);
+			anim_addSprite(spr_sue, 1, 0);
+			anim_addSprite(spr_sue, 2, 0);
+			anim_addSprite(spr_sue, 3, 0);
+			break;
+		//	------------------------------------------------------------
+	}
+}
