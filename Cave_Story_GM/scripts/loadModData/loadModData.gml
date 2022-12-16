@@ -11,7 +11,7 @@ function loadModData(argument0) {
 
 	_data[Mod.dir] = _dir;
 
-#region Settings
+	#region Settings
 
 	_filename = "modsettings.ini";
 
@@ -38,9 +38,9 @@ function loadModData(argument0) {
 	
 	ini_close();
 
-#endregion
+	#endregion
 
-#region Stage
+	#region Stage
 
 	if directory_exists(_dir + "Stage")
 	{
@@ -68,49 +68,52 @@ function loadModData(argument0) {
 		file_find_close();
 	}
 
-#endregion
+	#endregion
 
-#region Map Properties
+	#region Map Properties
 
-	_filename = "mapproperties.ini";
+	_filename = "mapproperties.json";
 
 	if file_exists( _dir + _filename )
 	{
 		_flag = setBit(_flag, Mod_Flag.propertiesExist);
+		
+		var b = buffer_load(_dir + _filename);
+		var stagejson = json_parse(buffer_read(b, buffer_text));
+		buffer_delete(b);
+		
+		var _names = variable_struct_get_names(stagejson);
+		var n = array_length(_names);
+		var _prop, _stagedata;
+		
+		for (var i = 0; i < n; i++)
+		{
+			_stageName = _names[i];
+			_stagedata = stagejson[$ _names[i]];
+	
+			_prop = array_create(16);
+		
+			_prop[Map_Property.tilesetName] = _stagedata[$ "tileset"];
+			_prop[Map_Property.mapName] = _stagedata[$ "mapname"];
+			_prop[Map_Property.backgroundType] = real( _stagedata[$ "bkType"] );
+			_prop[Map_Property.backgroundSpriteName] = _stagedata[$ "bkSprite"];
+			_prop[Map_Property.npcSprite1] = _stagedata[$ "npc1"];
+			_prop[Map_Property.npcSprite2] = _stagedata[$ "npc2"];
+			_prop[Map_Property.bossID] = real( _stagedata[$ "bossID"] );
+			_prop[Map_Property.caption] = _stagedata[$ "caption"];
+		
+			_prop[Map_Property.tileset] = 
+				get_classic_tileset( _prop[Map_Property.tilesetName] );
+			_prop[Map_Property.backgroundSprite] = 
+				get_classic_background( _prop[Map_Property.backgroundSpriteName] );
+			
+			PROPERTIES[? string_upper(_names[i])] = _prop;
+		}
 	}
+	
+	#endregion
 
-	ini_open( _dir + _filename );
-	
-	var _l = ds_list_size(_stage), _prop, _stageName;
-
-	for (var i = 0; i < _l; i++)
-	{
-		_stageName = _stage[| i];
-	
-		_prop = array_create(16);
-	
-		_prop[Map_Property.tilesetName] = ini_read_string(_stageName, "tileset", "0");
-		_prop[Map_Property.mapName] = ini_read_string(_stageName, "mapname", "0");
-		_prop[Map_Property.backgroundType] = ini_read_real(_stageName, "bkType", 0);
-		_prop[Map_Property.backgroundSpriteName] = ini_read_string(_stageName, "bkSprite", "0");
-		_prop[Map_Property.npcSprite1] = ini_read_string(_stageName, "npc1", "0");
-		_prop[Map_Property.npcSprite2] = ini_read_string(_stageName, "npc2", "0");
-		_prop[Map_Property.bossID] = ini_read_real(_stageName, "bossID", 0);
-		_prop[Map_Property.caption] = ini_read_string(_stageName, "caption", "0");
-	
-		_prop[Map_Property.tileset] = 
-			get_classic_tileset( _prop[Map_Property.tilesetName] );
-		_prop[Map_Property.backgroundSprite] = 
-			get_classic_background( _prop[Map_Property.backgroundSpriteName] );
-	
-		PROPERTIES[? _stageName] = _prop;
-	}
-	
-	ini_close();
-
-#endregion
-
-#region Music
+	#region Music
 
 	// Ogg Files
 
@@ -167,7 +170,7 @@ function loadModData(argument0) {
 
 	ini_close();
 
-#endregion
+	#endregion
 
 	// Delete immature stage data in properties map
 

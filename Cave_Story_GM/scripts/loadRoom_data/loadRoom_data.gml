@@ -24,10 +24,10 @@ function loadRoom_data() {
 	{
 		instance_create_depth(32, 96, 0, PLAYER);
 		instance_create_depth(0, 0, 0, mas_background);
-	
+		
 		var _prop = getMapProperties(stage_name), 
 		_tileSet, _bk, _bkMode;
-	
+		
 		// Tileset
 		_tileSet = _prop[Map_Property.tileset];
 	

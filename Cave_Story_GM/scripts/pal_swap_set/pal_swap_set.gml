@@ -58,8 +58,6 @@ function pal_swap_set(argument0, argument1, argument2) {
 	    var texel_hx = texel_x * 0.5;
 	    var texel_hy = texel_y * 0.5;
 		
-	    //show_message(string_format(texel_x,1,10));
-	    //show_message(string_format(texel_y,1,10));
 	    shader_set_uniform_f(Pal_Texel_Size[mode], texel_x, texel_y);
 	    shader_set_uniform_f(Pal_UVs[mode], texel_hx, texel_hy, 1.0+texel_hx, 1.0+texel_hy);
 	    shader_set_uniform_f(Pal_Index[mode], _pal_index);

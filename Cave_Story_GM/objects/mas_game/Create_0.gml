@@ -227,16 +227,15 @@ var _path = file_dir_string(DATADIR, DATANAME),
 _dir = file_find_first( _path + "*.tsc", 0 ),
 _str = "", _fname, _tempFile;
 
+temptsc = {};
+
 while (_dir != "")
 {
 	_str = get_TSC_string(_path + _dir);
 	_fname = filename_name(_dir);
 	
-	_tempFile = file_text_open_write(temp_directory + _fname);
+	temptsc[$ _fname] = _str;
 	
-	file_text_write_string(_tempFile, _str);
-	file_text_close(_tempFile);
-		
 	_dir = file_find_next();
 }
 
@@ -259,7 +258,8 @@ userface = irandom(29) + 1;
 
 playerFlag = [
 	setBit(0, Entity_Flag.drawWeapon, Entity_Flag.showDamage), 
-	setBit(0, Player_Flag.showGUI)];
+	setBit(0, Player_Flag.showGUI)
+	];
 	
 playerPaletteIndex = 0;
 

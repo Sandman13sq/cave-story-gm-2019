@@ -1679,6 +1679,7 @@
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"modsettings.ini","CopyToMask":-1,"filePath":"datafiles/Mods/Uirusu",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"Base.pxa","CopyToMask":-1,"filePath":"datafiles",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"README.txt","CopyToMask":-1,"filePath":"datafiles",},
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"mapproperties.json","CopyToMask":-1,"filePath":"datafiles/Mods/Classic",},
   ],
   "MetaData": {
     "IDEVersion": "2022.11.1.56",

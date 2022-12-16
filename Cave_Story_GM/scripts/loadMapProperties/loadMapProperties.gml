@@ -4,7 +4,7 @@ function loadMapProperties() {
 	var _file = file_bin_open(file_dir_string(DATADIR, DATANAME) + "_classic.pxp", 0),
 	_name = "", _prop, _val, _chr = "", _size = file_bin_size(_file);
 
-#region enum Map_Property
+	#region enum Map_Property
 
 	enum Map_Property
 	{
@@ -22,7 +22,7 @@ function loadMapProperties() {
 		backgroundSpriteName,
 	}
 
-#endregion
+	#endregion
 
 	for (var i = 0; i <= 0xFF; i++)
 	{
@@ -44,7 +44,7 @@ function loadMapProperties() {
 			}
 		}
 	
-	#region Get Properties
+		#region Get Properties
 	
 		// OBSELETED (Takes up too much memory)
 	
@@ -102,9 +102,10 @@ function loadMapProperties() {
 	
 		*/
 	
-	#endregion
+		#endregion
 	
-		ds_map_add(PROPERTIES, _name, (0xC8 * i));
+		ds_map_add(PROPERTIES, string_upper(_name), (0xC8 * i));
+		
 	}
 
 	file_bin_close(_file);

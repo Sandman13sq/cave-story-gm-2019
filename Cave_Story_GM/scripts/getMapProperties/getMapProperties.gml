@@ -14,11 +14,11 @@ function getMapProperties(argument0) {
 		if !ds_map_exists(PROPERTIES, _key) {_key = string_lower(_key);}
 		if !ds_map_exists(PROPERTIES, _key) {_key = string_capitalize(_key);}
 		if !ds_map_exists(PROPERTIES, _key) {_key = string_upper(_key);}
-	
+		
 		if !ds_map_exists(PROPERTIES, _key) 
 		{
 			_key = ds_map_find_first(PROPERTIES);
-		
+			
 			var _name = string_lower(argument0);
 		
 			// See if any key's spelling matches name
@@ -36,7 +36,7 @@ function getMapProperties(argument0) {
 			}
 		}
 	}
-
+	
 	return PROPERTIES[? _key];
 
 	/*
