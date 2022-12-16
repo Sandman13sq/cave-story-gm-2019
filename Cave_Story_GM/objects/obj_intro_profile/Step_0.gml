@@ -97,7 +97,7 @@ switch(state)
 					case(0):
 						sfx(snd_menuConfirm);
 						var _prof = profileList[| profileSelect - 1];
-						PROFILE_PATH = _prof[Profile.path];
+						PROFILE_PATH = _prof.path;
 						setEventFlag(0431);
 						runEventLine("<LDP<END");
 						break;
@@ -141,7 +141,7 @@ switch(state)
 			else
 			{
 				var _prof = profileList[| profileSelect - 1];
-				file_delete(_prof[Profile.path]);
+				file_delete(_prof.path);
 				state = 0;
 				event_user(0);
 			}

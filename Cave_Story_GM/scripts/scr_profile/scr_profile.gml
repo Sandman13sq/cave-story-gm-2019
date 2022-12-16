@@ -1,11 +1,221 @@
 /*
 */
 
+function GameProfile() constructor
+{
+	name = "New Profile";
+	
+	path = "";
+	modname = "";
+	date = "";
+	time = "";
+	face = 1;
+	
+	life = 0;
+	lifemax = 0;
+	
+	weapon = 0;
+	weaponcount = 0;
+	weaponlist = [];
+	
+	itemcount = 0;
+	itemlist = [];
+	
+	eventflags = [];
+	equipflags = 0;
+	
+	stagename = "";
+	stageid = 0;
+	stagex = 0;
+	stagey = 0;
+	musicindex = 0;
+	
+	teleporterstagecount = 0;
+	teleporterstages = {};
+	
+	paletteindex = 0;
+	
+	function FromGame(_face=-1)
+	{
+		var _list;
+		var _map;
+		var k;
+		var n;
+		
+		name = GAME.username;
+		face = (_face == -1)? 1 + irandom(28): _face;
+		
+		modname = DATANAME;
+		date = string(current_month) + "/" + string(current_day) + "/" + string(current_year);
+		time = string(current_hour) + ":" + value_to_string(current_minute, 2);
+		
+		// Stats
+		life = getPlayerData(Player_Stat.life);
+		lifemax = getPlayerData(Player_Stat.lifeMax);
+		paletteindex = GAME.playerPaletteIndex;
+		
+		// Stage
+		var p = instance_find(PLAYER, 0);
+		
+		stagename = mas_stage.caption;
+		stageid = mas_stage.index;
+		
+		stagex = getCenterX(p) div UNIT_PX;
+		stagey = getCenterY(p) div UNIT_PX;
+		
+		_map = TELEPORTER_STAGE;
+		n = ds_map_size(_map);
+		k = ds_map_find_first(_map);
+		
+		teleporterstagecount = n;
+		while (k != undefined)
+		{
+			teleporterstages[$ k] = _map[? k];
+			k = ds_map_find_next(_map, k);
+		}
+		
+		musicindex = MUSIC.gameBGM_index;
+		
+		// Weapons
+		var _weaponindex, _meta, _data;
+		
+		_list = getPlayerData(Player_Stat.weapons);
+		n = ds_list_size(_list);
+		
+		weaponcount = n;
+		array_resize(weaponlist, n);
+		
+		for (var i = 0; i < n; i++)
+		{
+			_weaponindex = _list[| i];
+			_meta = getWeaponMeta(0, _weaponindex);
+			_data = getWeaponData(0, _weaponindex);
+			
+			weaponlist[i] = {
+				index : _weaponindex,
+				
+				level : _meta[? Wep_Meta.level],
+				levelmax : _meta[? Wep_Meta.levelMax],
+				
+				energy : _data[? Wep_Data.energy],
+				
+				ammo : _meta[? Wep_Meta.ammo],
+				ammomax : _meta[? Wep_Meta.ammoMax],
+			};
+		}
+		
+		// Items
+		_list = getPlayerData(Player_Stat.items);
+		n = ds_list_size(_list);
+		itemcount = n;
+		array_resize(itemlist, n);
+		
+		for (var i = 0; i < n; i++)
+		{
+			itemlist[i] = _list[| i];
+		}
+		
+		// Flags
+		array_copy(eventflags, 0, FLAGS_EVENT, 0, array_length(FLAGS_EVENT));
+		equipflags = FLAGS_EQUIP;
+		
+		return self;
+	}
+	
+	function ToGame(_loadMap=false)
+	{
+		GAME.username = name;
+		GAME.dataname = modname;
+		
+		setPlayerData(Player_Stat.life, life);
+		setPlayerData(Player_Stat.lifeMax, lifemax);
+		GAME.playerPaletteIndex = paletteindex;
+		
+		// Weapons
+		var _list = getPlayerData(Player_Stat.weapons);
+		var _entry;
+		ds_list_clear(_list);
+		
+		for (var i = 0; i < weaponcount; i++)
+		{
+			_entry = weaponlist[i];
+			setWeaponLevel(_entry.index, _entry.level, _entry.energy);
+			setWeaponAmmo(_entry.index, _entry.ammo, _entry.ammomax);
+			
+			addPlayerWeapon(_entry.index);
+		}
+		
+		// Items
+		var _list = getPlayerData(Player_Stat.items);
+		ds_list_clear(_list);
+		
+		for (var i = 0; i < itemcount; i++)
+		{
+			addPlayerItem(itemlist[i]);
+		}
+		
+		// Stage
+		array_copy(FLAGS_EVENT, 0, eventflags, 0, array_length(eventflags));
+		FLAGS_EQUIP = equipflags;
+		
+		var keys = variable_struct_get_names(teleporterstages);
+		for (var i = 0; i < teleporterstagecount; i++)
+		{
+			TELEPORTER_STAGE[? keys[i]] = teleporterstages[$ i];
+		}
+		
+		// Load Map
+		if instance_exists(obj_fade) {instance_destroy(obj_fade)};
+		
+		if ( _loadMap )
+		{
+			bgm(Music.null);
+			load_classic_map(stageid, 0, stagex, stagey);
+			bgm(musicindex);
+		}
+		
+		return self;
+	}
+	
+	function FromFile(_path)
+	{
+		show_debug_message("Loading profile \"{0}\"", _path);
+		var b = buffer_load(_path);
+		var jsontext = buffer_read(b, buffer_text);
+		buffer_delete(b);
+		
+		otherprofile = json_parse(jsontext);
+		var _names = variable_struct_get_names(otherprofile);
+		var n = array_length(_names);
+		
+		for (var i = 0; i < n; i++)
+		{
+			self[$ _names[i]] = otherprofile[$ _names[i]];
+		}
+		
+		return self;
+	}
+	
+	function ToFile(_path)
+	{
+		path = _path;
+		
+		var b = buffer_create(4, buffer_grow, 1);
+		buffer_write(b, buffer_text, json_stringify(self));
+		buffer_save(b, _path);
+		buffer_delete(b);
+	}
+}
+
 /// @desc Saves player data to file
 /// @arg path,*face
 
 function saveProfile(_path, _face=-1)
 {
+	var profile = new GameProfile();
+	profile.FromGame(_face).ToFile(_path);
+	return;
+	
 	var b = buffer_create(1, buffer_grow, 1);
 
 	// Profile Name
@@ -120,8 +330,6 @@ function saveProfile(_path, _face=-1)
 	
 	buffer_save(b, _path);
 	buffer_delete(b);
-
-
 }
 
 
@@ -130,6 +338,10 @@ function saveProfile(_path, _face=-1)
 
 function readProfile(_path) 
 {
+	var profile = new GameProfile();
+	profile.FromFile(_path);
+	return profile;
+	
 	var _profile = array_create(32);
 	var b = buffer_load(_path);
 	
@@ -193,7 +405,10 @@ function readProfile(_path)
 
 function loadProfile(_path, _loadMap=true) 
 {
-	var b = buffer_load(_path);
+	var profile = new GameProfile();
+	profile.FromFile(_path);
+	profile.ToGame(_loadMap);
+	return;
 	
 	// Keep what you want to display at the beginning
 

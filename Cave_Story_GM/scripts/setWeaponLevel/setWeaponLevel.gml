@@ -28,8 +28,6 @@ function setWeaponLevel(argument0, argument1, argument2) {
 			_data[? Wep_Data.energy] = 0;
 		}
 	
-		cout(i + 1, _data[? Wep_Data.energy]);
-	
 		_list[| i] = _data;
 	}
 

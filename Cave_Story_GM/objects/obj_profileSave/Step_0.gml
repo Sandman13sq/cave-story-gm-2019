@@ -59,14 +59,14 @@ switch(state)
 					
 					var _chance = irandom(1);
 					
-					newData = array_create(16);
-					newData[Profile.name] = _chance? "Mr Traveller": "Ms Traveller";
-					newData[Profile.stageName] = STAGE.caption;
-					newData[Profile.date] = "--/--/--";
-					newData[Profile.time] = "--:--";
-					newData[Profile.life] = "--";
-					newData[Profile.lifeMax] = "--";
-					newData[Profile.face] = _chance? 31: 19;
+					newData = new GameProfile();
+					newData.name = _chance? "Mr Traveller": "Ms Traveller";
+					newData.stagename = STAGE.caption;
+					newData.date = "--/--/--";
+					newData.time = "--:--";
+					newData.life = "--";
+					newData.lifemax = "--";
+					newData.face = _chance? 31: 19;
 					
 					var i = 0;
 					while (file_exists("Profile" + string(i) + ".sav"))
@@ -74,7 +74,7 @@ switch(state)
 						i++;
 					}
 					
-					newData[Profile.path] = "Profile" + string(i);
+					newData.path = "Profile" + string(i);
 					canSave = true;
 					
 					sfx(snd_menuMove);
@@ -110,8 +110,8 @@ switch(state)
 				if !select[state]
 				{
 					var _prof = profileList[| profileSelect];
-					GAME.username = _prof[Profile.name];
-					saveProfile(_prof[Profile.path], _prof[Profile.face]);
+					GAME.username = _prof.name;
+					saveProfile(_prof.path, _prof.face);
 					advanceEvent();
 					instance_destroy();
 					sfx(snd_menuConfirm);
@@ -167,7 +167,7 @@ switch(state)
 					{
 						state = Profile_State.rename;
 						editString = "Rename Profile";
-						keyboard_string = newData[Profile.name];
+						keyboard_string = newData.name;
 					}
 					break;
 					
@@ -177,7 +177,7 @@ switch(state)
 					{
 						state = Profile_State.rename_file;
 						editString = "Change file name";
-						keyboard_string = newData[Profile.path];
+						keyboard_string = newData.path;
 					}
 					break;
 						
@@ -185,7 +185,7 @@ switch(state)
 				case(2):
 					if INPUT_ACTION_PRESSED
 					{
-						newData[Profile.face] = loop(newData[Profile.face] - 1, 
+						newData.face = loop(newData.face - 1, 
 							0, sprite_get_number(faceSprite)); 
 						sfx(snd_menuMove);
 					}
@@ -195,7 +195,7 @@ switch(state)
 				case(3):
 					if INPUT_ACTION_PRESSED
 					{
-						newData[Profile.face] = loop(newData[Profile.face] + 1, 
+						newData.face = loop(newData.face + 1, 
 							0, sprite_get_number(faceSprite)); 
 						sfx(snd_menuMove);
 					}
@@ -205,10 +205,10 @@ switch(state)
 				case(4):
 					if INPUT_ACTION_PRESSED
 					{
-						GAME.username = newData[Profile.name];
-						PROFILE_PATH = newData[Profile.path] + ".sav";
+						GAME.username = newData.name;
+						PROFILE_PATH = newData.path + ".sav";
 						
-						saveProfile(PROFILE_PATH, newData[Profile.face]);
+						saveProfile(PROFILE_PATH, newData.face);
 						sfx(snd_menuConfirm);
 						
 						if inGame {advanceEvent(); instance_destroy();}
@@ -270,7 +270,7 @@ switch(state)
 			{
 				if keyboard_check_pressed(vk_enter)
 				{
-					newData[Profile.path] = keyboard_string;
+					newData.path = keyboard_string;
 					state = Profile_State.saveEdit_new;
 					sfx(snd_menuConfirm);
 				}
@@ -310,7 +310,7 @@ switch(state)
 
 			if keyboard_check_pressed(vk_enter)
 			{
-				newData[Profile.name] = keyboard_string;
+				newData.name = keyboard_string;
 				state = Profile_State.saveEdit_new;
 				sfx(snd_menuConfirm);
 			}

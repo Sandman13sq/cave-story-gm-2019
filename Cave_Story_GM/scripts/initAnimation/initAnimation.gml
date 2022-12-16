@@ -29,7 +29,10 @@ function initAnimation() {
 	animationPalIndex = -1;
 	animationPalSprite = -1;
 
-	if !irandom(90) {animationShader = shd_doomTransparent;}
+	if ( DEBUG && !irandom(90) ) 
+	{
+		animationShader = shd_doomTransparent;
+	}
 
 	animationFlag = argument_count > 1? argument[1]: 0;
 

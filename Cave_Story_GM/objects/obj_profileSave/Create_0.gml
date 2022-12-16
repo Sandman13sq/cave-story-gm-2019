@@ -85,7 +85,7 @@ while(!_endLoop)
 
 #endregion
 
-newData = array_create(16);
+newData = new GameProfile();
 newDataChoice = [
 	"Profile Name",
 	"File Name",
@@ -102,7 +102,7 @@ for (var i = profileCount - 1; i >= 0; i--)
 	profile_x[i] = CAMERA_W + (i * 200);
 	
 	_profData = profileList[| i];
-	if _profData[Profile.path] == PROFILE_PATH
+	if _profData.path == PROFILE_PATH
 	{
 		profileSelect = i;
 		y_offset_target = -(Profile_GUI.h + Profile_GUI.ysep) * clamp(i, 0, profileCount - 2);

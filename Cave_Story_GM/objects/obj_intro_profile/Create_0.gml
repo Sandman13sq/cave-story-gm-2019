@@ -18,7 +18,7 @@ faceSprite = getFaceSprite();
 selectString[2] = ["Load", "Delete"];
 selectString[3] = ["Yes", "No"];
 
-newData = array_create(16);
+newData = new GameProfile();
 newDataChoice = [
 	"Profile Name",
 	"File Name",

@@ -10,7 +10,7 @@ switch(state)
 		_col = profileSelect == 0? c_white: c_gray;
 		draw_update_color(_col);
 		draw_set_halign(0);
-
+		
 		// Profiles
 		for (var i = 0; i < profileCount; i++)
 		{

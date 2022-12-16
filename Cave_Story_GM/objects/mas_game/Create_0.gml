@@ -250,7 +250,7 @@ eventFlag = array_create(160, 0);
 
 camWidthOffset = (camera_get_view_width(view_camera) - 960) / 2;
 
-#region
+#region Profile
 
 username = "Dev";
 userface = irandom(29) + 1;
