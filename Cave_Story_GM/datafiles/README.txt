@@ -4,7 +4,7 @@ v0.0.2
 12-14-22
 
 - Updated project to GMS2.3+
-	- None of the new features introduced post 2.3 are taken advantage of, as this project has been dropped.
+	- GMS2 v2.3 features are used in bug fixes only.
 - Game now starts at mimimum resolution 960x540.
 - Updated title art.
 
@@ -144,6 +144,7 @@ Grenade Launcher - Launches bouncing grenades that hurt before and after they bl
 		Spur
 	Absent:
 		Bubbler
+		Blade
 		Nemesis
 
 === New Features (Over Original) ==============================================================================
